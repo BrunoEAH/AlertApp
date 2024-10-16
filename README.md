@@ -3,6 +3,7 @@ Aplicativo para combater as fake news sobre o meio ambiente e alertar os usuári
 INSTRUÇÕES:
 
 Instalar framework Ionic:
+
 npm install -g @ionic/cli
 
 Rodar a aplicação:
