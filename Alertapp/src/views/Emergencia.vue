@@ -1,12 +1,20 @@
 <template>
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button default-href="/"></ion-back-button>
-      </ion-buttons>
-      <ion-title>Emergência</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+
+        <!-- Back Button-->
+        <ion-buttons slot="start">
+          <ion-back-button default-href="/tabs/noticia"></ion-back-button>
+        </ion-buttons>
+
+        <ion-title>
+          <!-- Ionicon Profile Icon in the Header -->
+          <ion-icon :icon="heartIcon" size="large"></ion-icon> Emergência
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
 
   <ion-content color="light">
     <!-- First list with checkboxes and toggles -->
@@ -40,11 +48,7 @@
     ></ion-alert>
   </ion-content>
 
-  <ion-footer>
-    <ion-toolbar>
-      <ion-title>Footer</ion-title>
-    </ion-toolbar>
-  </ion-footer>
+  </ion-page>
 </template>
 
 <script lang="ts">
@@ -53,7 +57,6 @@ import {
   IonButtons,
   IonCheckbox,
   IonContent,
-  IonFooter,
   IonHeader,
   IonInput,
   IonAlert,
@@ -65,6 +68,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/vue';
+import { heartOutline } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -73,7 +77,6 @@ export default defineComponent({
     IonButtons,
     IonCheckbox,
     IonContent,
-    IonFooter,
     IonHeader,
     IonInput,
     IonItem,
@@ -107,10 +110,21 @@ export default defineComponent({
       console.log(`Dismissed with role: ${ev.detail.role}`);
     };
 
+    const heartIcon = heartOutline;
+
+
     return {
       alertButtons,
       logResult,
+      heartIcon
     };
   },
 });
 </script>
+
+<style scoped>
+
+ion-title ion-icon {
+  margin-right: 10px;
+}
+</style>
