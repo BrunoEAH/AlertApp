@@ -1,4 +1,15 @@
 <!-- src/views/Mapa.vue -->
+
+<style scoped>
+  .example-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+</style>
+
+
 <template>
   <ion-page>
     <ion-header>
