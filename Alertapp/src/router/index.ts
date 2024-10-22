@@ -1,43 +1,42 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/TabsPage.vue'
+import TabsPage from '../views/TabsPage.vue';
+import Noticia from '../views/Noticia.vue';
+import Emergencia from '../views/Emergencia.vue';
+import Perfil from '../views/Perfil.vue';
+import Relatorio from '../views/Relatorio.vue';
+import Mapa from '../views/Mapa.vue';
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    redirect: '/tabs/tab1'
-  },
-  {
-    path: '/tabs/',
-    component: TabsPage,
-    children: [
+
+const routes = [
       {
-        path: '',
-        redirect: '/tabs/tab1'
+        path: '/tabs/noticia',
+        name: 'Noticia',
+        component: Noticia,
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/PaginaInicial.vue')
+        path: '/tabs/mapa',
+        name: 'Mapa',
+        component: Mapa,
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/PaginaNoticias.vue')
+        path: '/tabs/relatorio',
+        name: 'Relatorio',
+        component: Relatorio,
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/PaginaAlerta.vue')
+        path: '/tabs/perfil',
+        name: 'Perfil',
+        component: Perfil,
       },
       {
-        path: 'tab4',
-        component: () => import('@/views/PaginaMapa.vue')
+        path: '/tabs/emergencia',
+        name: 'Emergencia',
+        component: Emergencia,
       }
-    ]
-  }
-]
-
+    ];
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

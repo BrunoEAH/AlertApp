@@ -5,6 +5,7 @@ INSTRUÇÕES:
 Instalar framework Ionic:
 
 npm install -g @ionic/cli
+npm install leaflet ionicons
 
 Rodar a aplicação:
 
