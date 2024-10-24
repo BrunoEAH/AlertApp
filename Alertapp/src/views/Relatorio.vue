@@ -20,7 +20,7 @@
         </ion-text>
       </ion-toolbar>
   
-    <ion-content color="light">
+    <ion-content color="light" :fullscreen="true" class="ion-padding">
 
       <!--Textbox-->
       <ion-list inset="true">
@@ -68,15 +68,6 @@
         <ion-button id="present-alert">Cancelar</ion-button>
       </div>
       
-
-      <!-- Alert component -->
-      <ion-alert
-        trigger="present-alert"
-        class="custom-alert"
-        header="Você tem certeza que deseja enviar um alerta?"
-        :buttons="alertButtons"
-        @didDismiss="logResult"
-      ></ion-alert>
     </ion-content>
   </ion-page>
 </template>
