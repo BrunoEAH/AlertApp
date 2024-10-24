@@ -4,7 +4,7 @@
       <ion-toolbar>
         <!-- Back Button-->
         <ion-buttons slot="start">
-          <ion-back-button default-href="/tabs/noticia"></ion-back-button>
+          <ion-back-button default-href="/tabs/home"></ion-back-button>
         </ion-buttons>
 
         <ion-title>
@@ -76,6 +76,7 @@
 
 
 <script lang="ts">
+import ExploreContainer from '@/components/ExploreContainer.vue';
 import {
   IonBackButton,
   IonButtons,

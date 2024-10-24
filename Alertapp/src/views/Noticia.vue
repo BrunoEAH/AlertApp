@@ -4,7 +4,7 @@
       <ion-toolbar>
         <ion-title>Notícias</ion-title>
       </ion-toolbar>
-      <!-- 搜索导航栏 -->
+
       <ion-toolbar>
         <ion-searchbar 
           v-model="searchQuery" 
@@ -16,7 +16,7 @@
     </ion-header>
 
     <ion-content>
-      <!-- 新闻列表 -->
+
       <div class="news-list">
         <div v-if="filteredNews.length === 0">
           <p>Nenhuma notícia encontrada.</p>
@@ -38,7 +38,7 @@ import { defineComponent, ref, onMounted } from 'vue';
 export default defineComponent({
   name: 'NoticiasPage',
   setup() {
-    const searchQuery = ref(''); // 搜索关键字
+    const searchQuery = ref(''); 
     const news = ref([
       {
         title: 'Notícia 1',
@@ -60,18 +60,18 @@ export default defineComponent({
       },
     ]);
 
-    // 过滤后的新闻
+
     const filteredNews = ref(news.value);
 
-    // 页面挂载后，更新页面标题
+ 
     onMounted(() => {
       document.title = 'Notícias';
     });
 
-    // 过滤新闻的函数
+  
     const filterNews = () => {
       if (searchQuery.value.trim() === '') {
-        filteredNews.value = news.value; // 如果搜索栏为空，显示所有新闻
+        filteredNews.value = news.value; 
       } else {
         filteredNews.value = news.value.filter(newsItem =>
           newsItem.title.toLowerCase().includes(searchQuery.value.toLowerCase())

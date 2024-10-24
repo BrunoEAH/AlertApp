@@ -1,69 +1,40 @@
 <template>
   <ion-page>
     <ion-tabs>
+      <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
-        <!-- Noticias -->
+
         <ion-tab-button tab="noticia" href="/tabs/noticia">
-          <ion-icon :icon="bookIcon"></ion-icon>
+          <ion-icon aria-hidden="true" :icon="bookIcon" />
           <ion-label>Notícias</ion-label>
         </ion-tab-button>
 
-        <!-- Mapa -->
         <ion-tab-button tab="mapa" href="/tabs/mapa">
-          <ion-icon :icon="globeIcon"></ion-icon>
+          <ion-icon aria-hidden="true" :icon="globeIcon" />
           <ion-label>Mapa</ion-label>
         </ion-tab-button>
 
-        <!-- Emergência -->
         <ion-tab-button tab="emergencia" href="/tabs/emergencia">
-          <ion-icon :icon="heartIcon"></ion-icon>
+          <ion-icon aria-hidden="true" :icon="heartIcon" />
           <ion-label>Emergência</ion-label>
         </ion-tab-button>
 
-        <!-- Relatório -->
         <ion-tab-button tab="relatorio" href="/tabs/relatorio">
-          <ion-icon :icon="documentTextIcon"></ion-icon>
+          <ion-icon aria-hidden="true" name="document-text-outline" />
           <ion-label>Relatório</ion-label>
         </ion-tab-button>
-
-        <!-- Perfil -->
+        <ion-icon name="document-text-outline"></ion-icon>
         <ion-tab-button tab="perfil" href="/tabs/perfil">
-          <ion-icon :icon="personCircleIcon"></ion-icon>
+          <ion-icon aria-hidden="true" name="person-circle-outline" />
           <ion-label>Perfil</ion-label>
         </ion-tab-button>
+        <ion-icon ></ion-icon>
+
       </ion-tab-bar>
     </ion-tabs>
   </ion-page>
 </template>
 
-<script>
-import { addIcons } from 'ionicons';
-import { 
-  bookOutline, 
-  documentTextOutline, 
-  personCircleOutline, 
-  heartOutline, 
-  globeOutline 
-} from 'ionicons/icons';
-
-export default {
-  data() {
-    return {
-      bookIcon: bookOutline,
-      documentTextIcon: documentTextOutline,
-      personCircleIcon: personCircleOutline,
-      globeIcon: globeOutline,
-      heartIcon: heartOutline,
-    };
-  },
-  created() {
-    addIcons({
-      'book-outline': bookOutline,
-      'document-text-outline': documentTextOutline,
-      'person-circle-outline': personCircleOutline,
-      'globe-outline': globeOutline,
-      'heart-outline': heartOutline,
-    });
-  }
-};
+<script setup lang="ts">
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
 </script>

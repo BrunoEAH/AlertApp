@@ -9,7 +9,7 @@
 
   import { defineComponent } from 'vue';
 
-  import BottomTab from '../views/BottomTab.vue';
+  import TabsPage from '../views/TabsPage.vue';
 
   export default defineComponent({
     name: 'App',

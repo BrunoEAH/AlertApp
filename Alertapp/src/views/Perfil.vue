@@ -5,7 +5,7 @@
 
         <!-- Back Button -->
         <ion-buttons slot="start">
-          <ion-back-button default-href="/tabs/noticia"></ion-back-button>
+          <ion-back-button default-href="/tabs/home"></ion-back-button>
         </ion-buttons>
 
         <ion-title>
@@ -78,6 +78,7 @@ import {
   IonHeader,
   IonIcon,
   IonInput,
+  toastController,
   IonItem,
   IonLabel,
   IonList,
@@ -86,7 +87,7 @@ import {
   IonToolbar,
 } from '@ionic/vue';
 import { personCircleOutline } from 'ionicons/icons'; // Import Ionicons profile icon
-import { defineComponent, ref } from 'vue';
+import { defineComponent, getCurrentInstance, ref } from 'vue';
 
 export default defineComponent({
   components: {
@@ -105,9 +106,18 @@ export default defineComponent({
     IonTitle,
     IonToolbar,
   },
-
+  methods: {
+    async presentToast() {
+      const toast = await toastController.create({
+        message: 'Informações salvas com sucesso',
+        duration: 1500,
+        position: 'middle',
+      });
+      await toast.present();
+    },
+  },
   setup() {
-    // Reactive profile data
+    const { proxy } = getCurrentInstance()!;
     const profile = ref({
       name: 'José',
       surname: 'da Silva',
@@ -134,6 +144,7 @@ export default defineComponent({
     const saveProfile = () => {
       // Logic to save profile details (could involve calling an API, etc.)
       console.log('Profile Saved:', profile.value);
+      proxy.presentToast();
     };
 
     return {
