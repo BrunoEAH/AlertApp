@@ -1,4 +1,5 @@
 <template>
+  <ion-page>
     <ion-header>
       <ion-toolbar>
         <ion-title>Alertapp - Página Principal</ion-title>
@@ -64,7 +65,8 @@
         </ion-item>
       </ion-list>
     </ion-content>
-  </template>
+  </ion-page>
+</template>
   
   <script lang="ts">
     import {

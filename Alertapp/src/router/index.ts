@@ -19,27 +19,27 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'home',
-        component: () => import('../views/Home.vue')
+        component: () => import('../views/HomePage.vue')
       },
       {
         path: 'noticia',
-        component: () => import('../views/Noticia.vue')
+        component: () => import('../views/NoticiaPage.vue')
       },
       {
         path: 'mapa',
-        component: () => import('../views/Mapa.vue')
+        component: () => import('../views/MapaPage.vue')
       },
       {
         path: 'relatorio',
-        component: () => import('../views/Relatorio.vue')
+        component: () => import('../views/RelatorioPage.vue')
       },
       {
         path: 'perfil',
-        component: () => import('../views/Perfil.vue')
+        component: () => import('../views/PerfilPage.vue')
       },
       {
         path: 'emergencia',
-        component: () => import('../views/Emergencia.vue')
+        component: () => import('../views/EmergenciaPage.vue')
       }
     ]
   }
