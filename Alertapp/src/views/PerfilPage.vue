@@ -2,14 +2,10 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-
-        <!-- Back Button -->
         <ion-buttons slot="start">
-          <ion-back-button default-href="/tabs/home"></ion-back-button>
+          <ion-back-button defaultHref="/home"></ion-back-button>
         </ion-buttons>
-
         <ion-title>
-          <!-- Ionicon Profile Icon in the Header -->
           <ion-icon :icon="personCircleIcon" size="large"></ion-icon> Perfil
         </ion-title>
       </ion-toolbar>
@@ -17,14 +13,12 @@
 
     <ion-content>
       <div class="profile-header">
-        <!-- Profile Picture -->
         <ion-avatar class="profile-avatar">
           <img :src="profileImage" alt="Profile Picture" />
         </ion-avatar>
         <ion-button fill="clear" @click="changeProfilePicture">Change Picture</ion-button>
       </div>
 
-      <!-- Profile Form -->
       <ion-list>
         <ion-item>
           <ion-label position="stacked">Nome</ion-label>
@@ -61,7 +55,6 @@
           <ion-input type="tel" v-model="profile.endereco" placeholder="Coloque seu endereco"></ion-input>
         </ion-item>
 
-        <!-- Save Button -->
         <ion-button expand="block" @click="saveProfile">Salvar</ion-button>
       </ion-list>
     </ion-content>
@@ -87,14 +80,15 @@ import {
   IonToolbar,
 } from '@ionic/vue';
 import { personCircleOutline } from 'ionicons/icons'; // Import Ionicons profile icon
-import { defineComponent, getCurrentInstance, ref } from 'vue';
+import { defineComponent, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   components: {
     IonAvatar,
     IonButton,
     IonButtons,
-    IonBackButton,  // Ensure IonBackButton is imported
+    IonBackButton,
     IonContent,
     IonHeader,
     IonIcon,
@@ -105,19 +99,12 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar,
-  },
-  methods: {
-    async presentToast() {
-      const toast = await toastController.create({
-        message: 'Informações salvas com sucesso',
-        duration: 1500,
-        position: 'middle',
-      });
-      await toast.present();
-    },
+    
   },
   setup() {
-    const { proxy } = getCurrentInstance()!;
+    const router = useRouter();
+    const description = ref('');
+
     const profile = ref({
       name: 'José',
       surname: 'da Silva',
@@ -128,29 +115,28 @@ export default defineComponent({
       endereco: 'Avenida Paulista, n 65'
     });
 
-    // Profile image URL
     const profileImage = ref('https://via.placeholder.com/150'); // Placeholder image
-
-    // Ionicons profile icon
     const personCircleIcon = personCircleOutline;
 
-    // Function to change profile picture (mock)
     const changeProfilePicture = () => {
-      // Logic to change the profile picture (could be opening a file picker, etc.)
       console.log('Change Profile Picture Clicked');
     };
 
-    // Function to save profile changes (mock)
-    const saveProfile = () => {
-      // Logic to save profile details (could involve calling an API, etc.)
+    const saveProfile = async () => {
       console.log('Profile Saved:', profile.value);
-      proxy.presentToast();
+      const toast = await toastController.create({
+        message: 'Informações salvas com sucesso',
+        duration: 1500,
+        position: 'middle',
+      });
+      await toast.present();
     };
 
     return {
       profile,
+      description,
       profileImage,
-      personCircleIcon, // Use the icon
+      personCircleIcon,
       changeProfilePicture,
       saveProfile,
     };

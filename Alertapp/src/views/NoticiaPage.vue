@@ -2,6 +2,9 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
+        <ion-buttons>
+          <ion-back-button tab="home" default-href="/home"></ion-back-button>
+        </ion-buttons>
         <ion-title>Notícias</ion-title>
       </ion-toolbar>
 
@@ -34,8 +37,32 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue';
+import {
+  IonBackButton,
+  IonPage,
+  IonButtons,
+  IonCheckbox,
+  IonContent,
+  IonHeader,
+  IonTextarea,
+  IonButton,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/vue';
 
 export default defineComponent({
+  components: {
+    IonBackButton,
+    IonButtons,
+    IonContent,
+    IonPage,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+  },
   name: 'NoticiasPage',
   setup() {
     const searchQuery = ref(''); 
