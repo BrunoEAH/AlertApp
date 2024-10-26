@@ -174,6 +174,7 @@ export default defineComponent({
 <style scoped>
 ion-title ion-icon {
   margin-right: 10px;
+  margin-top: -50 px;
 }
 
 ion-label p {

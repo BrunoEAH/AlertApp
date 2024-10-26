@@ -16,7 +16,7 @@
         <ion-avatar class="profile-avatar">
           <img :src="profileImage" alt="Profile Picture" />
         </ion-avatar>
-        <ion-button fill="clear" @click="changeProfilePicture">Change Picture</ion-button>
+        <ion-button fill="clear" @click="changeProfilePicture">Mudar foto</ion-button>
       </div>
 
       <ion-list>
@@ -165,5 +165,7 @@ ion-avatar img {
 
 ion-title ion-icon {
   margin-right: 10px;
+  margin-top: -50 px;
 }
+
 </style>

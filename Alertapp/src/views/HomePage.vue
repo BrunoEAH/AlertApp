@@ -39,6 +39,14 @@
   </ion-menu>
   <ion-router-outlet id="menuContent"></ion-router-outlet>
  
+  <ion-toolbar color="light">
+      <ion-title>
+        <ion-icon :icon="notificationsOutline"></ion-icon>
+        Notificações
+      </ion-title>
+    </ion-toolbar>
+
+
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -113,6 +121,19 @@
           </div>
         </ion-item>
       </ion-list>
+
+  <ion-list lines="none">
+  <ion-item>
+    <ion-label> <ion-icon :icon="pinOutline"></ion-icon> São Paulo - SP</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label><ion-icon :icon="calendarOutline"></ion-icon> 28/10/2024 - 16:33</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label><ion-icon :icon="thermometerOutline"></ion-icon> 23° Celsius - Céu limpo</ion-label>
+  </ion-item>
+</ion-list>
+
     </ion-content>
   </ion-page>
 </template>
@@ -136,7 +157,7 @@ import {
   IonPage,
 } from '@ionic/vue';
 import { defineComponent } from 'vue';
-import { chevronForward,listCircle, bookOutline, personCircleOutline, documentTextOutline, heartCircleOutline, globeOutline} from 'ionicons/icons';
+import { chevronForward,listCircle,pinOutline,bookOutline,notificationsOutline,calendarOutline, personCircleOutline, documentTextOutline, heartCircleOutline, globeOutline, thermometerOutline} from 'ionicons/icons';
 import { useRouter } from 'vue-router'; 
 import EmergenciaPage from './EmergenciaPage.vue';
 
@@ -188,9 +209,13 @@ export default defineComponent({
       chevronForward, 
       listCircle,
       bookOutline,
+      pinOutline,
+      thermometerOutline,
+      calendarOutline,
       personCircleOutline,
       documentTextOutline,
       heartCircleOutline,
+      notificationsOutline,
       globeOutline,
       goToMapa,
       goToRelatorio,
@@ -239,4 +264,5 @@ ion-item {
   --ion-item-background: var(--ion-color-light);
   --ion-item-hover-background: var(--ion-color-primary-shade);
 }
+
 </style>

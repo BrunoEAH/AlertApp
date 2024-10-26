@@ -2,10 +2,11 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-buttons>
-          <ion-back-button tab="home" default-href="/home"></ion-back-button>
+        <ion-buttons slot="start">
+          <ion-back-button default-href="/home"></ion-back-button>
         </ion-buttons>
-        <ion-title>Notícias</ion-title>
+        <ion-title>
+          <ion-icon :icon="bookOutline" size="large"></ion-icon>Notícias</ion-title>
       </ion-toolbar>
 
       <ion-toolbar>
@@ -50,9 +51,12 @@ import {
   IonItem,
   IonLabel,
   IonList,
+  IonIcon,
   IonTitle,
   IonToolbar,
 } from '@ionic/vue';
+
+import {bookOutline} from "ionicons/icons"
 
 export default defineComponent({
   components: {
@@ -62,6 +66,7 @@ export default defineComponent({
     IonContent,
     IonPage,
     IonHeader,
+    bookOutline,
     IonTitle,
     IonToolbar,
   },
@@ -108,12 +113,18 @@ export default defineComponent({
       }
     };
 
-    return { news, searchQuery, filteredNews, filterNews };
+    return { news, searchQuery, filteredNews, bookOutline, filterNews };
   },
 });
 </script>
 
 <style scoped>
+
+ion-title ion-icon {
+  margin-right: 10px;
+  margin-top: -50 px;
+}
+
 .news-list {
   padding: 10px;
 }

@@ -3,8 +3,8 @@
     <ion-header>
       <ion-toolbar>
         <!-- Back Button-->
-        <ion-buttons>
-          <ion-back-button tab="home" default-href="/home"></ion-back-button>
+        <ion-buttons slot="start">
+          <ion-back-button default-href="/home"></ion-back-button>
         </ion-buttons>
         <ion-title>
           <ion-icon :icon="documentTextOutline"></ion-icon>Relatório
