@@ -70,7 +70,6 @@
         :buttons="alertButtons"
         @didDismiss="logResult"
       ></ion-alert>
-    <ExploreContainer name="Emergencia" />
     </ion-content>
   </ion-page>
 </template>

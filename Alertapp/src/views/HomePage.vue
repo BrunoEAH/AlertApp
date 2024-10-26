@@ -1,5 +1,6 @@
 <template>
-  <ion-menu content-id="main-content">
+<ion-page>
+  <ion-menu ion-menu side="start" contentId="menuContent">
     <ion-header>
       <ion-toolbar>
         <ion-title>Menu</ion-title>
@@ -36,8 +37,8 @@
       </ion-list>
     </ion-content>
   </ion-menu>
-
-  <ion-page id="main-content">
+  <ion-router-outlet id="menuContent"></ion-router-outlet>
+ 
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -122,6 +123,7 @@ import {
   IonMenuButton,
   IonMenu,
   IonContent,
+  IonRouterOutlet,
   IonHeader,
   IonIcon,
   IonItem,
@@ -143,6 +145,7 @@ export default defineComponent({
   components: {
     IonContent,
     IonHeader,
+    IonRouterOutlet,
     IonIcon,
     IonItem,
     IonLabel,
