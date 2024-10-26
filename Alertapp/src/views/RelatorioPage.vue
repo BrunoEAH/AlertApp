@@ -7,7 +7,7 @@
           <ion-back-button tab="home" default-href="/home"></ion-back-button>
         </ion-buttons>
         <ion-title>
-          <ion-icon name="document-text-outline"></ion-icon>Relatório
+          <ion-icon :icon="documentTextOutline"></ion-icon>Relatório
         </ion-title>
       </ion-toolbar>
     </ion-header>
@@ -57,6 +57,8 @@
 <script lang="ts">
 import {
   IonBackButton,
+  IonIcon,
+  IonText,
   IonPage,
   IonButtons,
   IonCheckbox,
@@ -80,6 +82,8 @@ export default defineComponent({
     IonBackButton,
     IonButtons,
     IonCheckbox,
+    IonIcon,
+    IonText,
     IonContent,
     IonPage,
     IonHeader,
@@ -142,6 +146,7 @@ export default defineComponent({
       tipoAjuda,
       shareData,
       fileIcon,
+      documentTextOutline,
       description,
       sendReport,
       cancelReport,

@@ -134,7 +134,7 @@ import {
   IonPage,
 } from '@ionic/vue';
 import { defineComponent } from 'vue';
-import { chevronForward, listCircle, bookOutline, personCircleOutline, documentTextOutline, heartCircleOutline, globeOutline } from 'ionicons/icons';
+import { chevronForward,listCircle, bookOutline, personCircleOutline, documentTextOutline, heartCircleOutline, globeOutline} from 'ionicons/icons';
 import { useRouter } from 'vue-router'; 
 import EmergenciaPage from './EmergenciaPage.vue';
 
@@ -184,6 +184,11 @@ export default defineComponent({
     return { 
       chevronForward, 
       listCircle,
+      bookOutline,
+      personCircleOutline,
+      documentTextOutline,
+      heartCircleOutline,
+      globeOutline,
       goToMapa,
       goToRelatorio,
       goToEmergencia,

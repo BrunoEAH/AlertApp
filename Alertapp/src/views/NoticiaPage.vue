@@ -42,6 +42,7 @@ import {
   IonPage,
   IonButtons,
   IonCheckbox,
+  IonSearchbar,
   IonContent,
   IonHeader,
   IonTextarea,
@@ -57,6 +58,7 @@ export default defineComponent({
   components: {
     IonBackButton,
     IonButtons,
+    IonSearchbar,
     IonContent,
     IonPage,
     IonHeader,
